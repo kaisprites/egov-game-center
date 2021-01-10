@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+    body {
+        background: linear-gradient(90deg, #222831, #393e46, #393e46, #222831);
+    }
+    .visablebox{
+        background: linear-gradient(160deg, #00adb5 0% 30%, #008a9c 90% 100%);
+        box-shadow: 3px 3px 3px rgba(21,21,21,0.8);
+        border-radius: 10px;
+    }
+    div.wrapper{
+        width: 550px;
+        margin: 30px auto;
+    }
+    header {
+        line-height: 5rem;
+    }
+    h1{
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+        color: white;
+        text-shadow: 1px 1px #000, -1px 1px #000, 1px -1px #000, -1px -1px #000,
+                     0 0 5px #000,
+                     15px 20px #078,
+                     -25px -20px #078,
+                     -10px 15px #078,
+                     -40px 5px #078,
+                     30px -15px #078;
+    }
+
+    section {
+        height: 550px;
+        margin-bottom: 20px;
+    }
+
+    div.button {
+        position: absolute;
+        box-sizing: border-box;
+        width: 200px;
+        height: 200px;
+        border: 10px double black;
+        border-radius: 100px;
+        box-shadow: 0 0 10px #013, 0 0 10px #013;
+        z-index: 5;
+    }
+    div.red{
+        background: linear-gradient(crimson, darkred);
+        margin: 25px 0 0 175px;
+    }
+    div.yellow {
+        background: linear-gradient(gold, goldenrod);
+        margin: 175px 0 0 325px;
+    }
+    div.green {
+        background: linear-gradient(forestgreen, darkgreen);
+        margin: 325px 0 0 175px;
+    }
+    div.blue {
+        background: linear-gradient(mediumblue, midnightblue);
+        margin: 175px 0 0 25px;
+    }
+    div.glower {
+        border: none;
+        background: white;
+        box-shadow: 0 0 10px #fff,0 0 10px #fff;
+        opacity: 0;
+        z-index: 10;
+    }
+    div.glower0 {margin: 25px 0 0 175px;}
+    div.glower1 {margin: 175px 0 0 325px;}
+    div.glower2 {margin: 325px 0 0 175px;}
+    div.glower3 {margin: 175px 0 0 25px;}
+
+    div.glowering {
+        animation: glower 0.3s ease-out 0s 2 alternate;
+    }
+
+    @keyframes glower {
+        0% {opacity: 0;}
+        100% {opacity: 0.8;}
+    }
+    
+    section.ctrlpnl {
+        display: flex;
+        align-items: center;
+        height: 100px;
+    }
+    table.ctrlpnl{
+        width: 100%;
+        margin: auto;
+    }
+    td {width: 50%;}
+    td:nth-of-type(2) {text-align: right;}
+    

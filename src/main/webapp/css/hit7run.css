@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+    body{
+        font-family: Georgia, 'Times New Roman', Times, '굴림', serif;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background: linear-gradient(90deg, #222831, #393e46, #393e46, #222831);
+        color: #eeeeee;
+        
+    }
+    .visablebox{
+        background: linear-gradient(160deg, #00adb5 0% 30%, #008a9c 90% 100%);
+
+        box-shadow: 3px 3px 3px rgba(21,21,21,0.8);
+    }
+
+    div,span{
+        border-radius: 10px;
+    }
+    div.header{
+        width:200px;
+        height: 50px;
+        margin: 0 auto;
+        text-align: center;
+        text-shadow: 0px 0px 15px rgb(61,61,61),
+        1px 1px 0 rgb(61,61,61),
+        -1px -1px 0 rgb(61,61,61),
+        1px -1px 0 rgb(61,61,61),
+        -1px 1px 0 rgb(61,61,61);
+    }
+    div.cell-wrapper{
+        width:300px;
+        margin: 10px auto 0 auto;
+        text-align: center;
+    }
+    span.cell{
+        display: inline-block;
+        width:50px;
+        height:50px;
+        text-align: center;
+        font-size: 200%;
+        margin: 0px 5px;
+        line-height: 1.625em;
+    }
+    div.buttons{
+        width: 394px;
+        margin: 10px auto 0 auto;
+        text-align: center;
+        font-size: 150%;
+    }
+    div#textlog{
+        width: 380px;
+        height: 380px;
+        margin: 10px auto;
+        padding: 10px;
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }

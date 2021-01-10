@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mega.gamecenter.GameCenterMapper">
+
+	<resultMap id="gamecenter" type="com.mega.gamecenter.GameCenterVO">
+		<result property="id" column="id"/>
+		<result property="password" column="password"/>
+		<result property="name" column="name"/>
+		<result property="comment" column="comment"/>
+		<result property="yacht" column="yacht"/>
+		<result property="cardflip" column="cardflip"/>
+		<result property="simon" column="simon"/>
+		<result property="hit7run" column="hit7run"/>
+		<result property="game2048" column="game2048"/>
+	</resultMap>
+
+	<insert id="signup" parameterType="GameCenterVO">
+	
+			INSERT INTO GAMECENTER
+			VALUES ( #{id}
+				  , #{password}
+				  , #{name}
+				  , #{comment, jdbcType=VARCHAR}
+				  , NULL 
+				  , NULL
+				  , NULL
+				  , NULL
+				  , NULL )
+	</insert>
+	
+	<select id="selectOne" parameterType="GameCenterVO" resultMap="gamecenter">
+			SELECT *
+			FROM GAMECENTER
+			WHERE ID = #{id}
+	</select>
+	
+	<select id="selectList" parameterType="GameCenterVO" resultMap="gamecenter">
+			SELECT *
+			FROM GAMECENTER
+			<choose>
+				<when test="sortType == 'yacht'">
+					ORDER BY YACHT DESC
+				</when>
+				<when test="sortType == 'cardflip'">
+					ORDER BY CARDFLIP
+				</when>
+				<when test="sortType == 'simon'">
+					ORDER BY SIMON DESC
+				</when>
+				<when test="sortType == 'hit7run'">
+					ORDER BY HIT7RUN
+				</when>
+				<when test="sortType == 'game2048'">
+					ORDER BY GAME2048 DESC
+				</when>
+			</choose>
+	</select>
+	
+	<update id="update" parameterType="GameCenterVO">
+			UPDATE GAMECENTER
+			SET PASSWORD = #{password},
+			NAME = #{name},
+			"COMMENT" = #{comment, jdbcType=VARCHAR}
+			WHERE ID = #{id}
+	</update>
+	
+	<update id="yacht" parameterType="GameCenterVO">
+			UPDATE GAMECENTER
+			SET YACHT = #{yacht, jdbcType=NUMERIC}
+			WHERE ID = #{id}
+	</update>
+	
+	<update id="simon" parameterType="GameCenterVO">
+			UPDATE GAMECENTER
+			SET SIMON = #{simon, jdbcType=NUMERIC}
+			WHERE ID = #{id}
+	</update>
+	
+	<update id="cardflip" parameterType="GameCenterVO">
+			UPDATE GAMECENTER
+			SET CARDFLIP = #{cardflip, jdbcType=NUMERIC}
+			WHERE ID = #{id}
+	</update>
+	
+	<update id="hit7run" parameterType="GameCenterVO">
+			UPDATE GAMECENTER
+			SET HIT7RUN = #{hit7run, jdbcType=NUMERIC}
+			WHERE ID = #{id}
+	</update>
+	
+	<update id="game2048" parameterType="GameCenterVO">
+			UPDATE GAMECENTER
+			SET GAME2048 = #{game2048, jdbcType=NUMERIC}
+			WHERE ID = #{id}
+	</update>
+	
+	<delete id="delete" parameterType="GameCenterVO">
+			DELETE
+			FROM GAMECENTER
+			WHERE ID = #{id}
+	</delete>
+</mapper>
